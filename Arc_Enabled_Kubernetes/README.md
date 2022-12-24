@@ -104,6 +104,7 @@ az provider show -n Microsoft.ExtendedLocation -o table
 az group create -l eastus -n capi-controlplane
 
 **Create Azure Kubernetes Service that will be used as the management cluster (Edit Script with your IDs)**
+```
 AKS_ADMINGRP_OBJECTID=""
 az aks create --resource-group capi-controlplane --name capi-controlplane \
     --node-count 1 --node-vm-size Standard_D4s_v3 \
@@ -114,7 +115,7 @@ az aks create --resource-group capi-controlplane --name capi-controlplane \
     --enable-aad --aad-admin-group-object-ids $AKS_ADMINGRP_OBJECTID \
     --max-pods 110 \
     --yes  
-
+```
 #### Variable initialization
 Initialize the azure environment variables before the AKS cluster can be converted into the cluster api management cluster and the workload cluster can be created based on the CAPZ (Azure provider)  
 ```
@@ -184,10 +185,7 @@ clusterctl generate cluster ${WORKLOAD_CLUSTER_NAME} \
   > capi-workloadcluster.yaml
 
 # Apply the kubernetes manifest to create the cluster
-
-```
 kubectl apply -f capi-workloadcluster.yaml
-
 ```
 
 #### Validations
