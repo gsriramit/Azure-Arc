@@ -160,7 +160,7 @@ The clusterctl generate cluster command returns a YAML template for creating a w
 az vm list-skus -l <your_location> -r virtualMachines -o table
 
 # Name of the Azure datacenter location. Change this value to your desired location.
-export AZURE_LOCATION="centralus"
+export AZURE_LOCATION="eastus"
 
 # Select VM types.
 export AZURE_CONTROL_PLANE_MACHINE_TYPE="Standard_D2s_v3"
@@ -214,4 +214,7 @@ kubectl --kubeconfig=./${WORKLOAD_CLUSTER_NAME}.kubeconfig \
 kubectl --kubeconfig=./${WORKLOAD_CLUSTER_NAME}.kubeconfig get nodes
 ```
 
-
+### Connecting the workload cluster to Azure
+```
+az connectedk8s connect --name $WORKLOAD_CLUSTER_NAME --resource-group $AZURE_RESOURCE_GROUP --location $AZURE_LOCATION --kube-config $WORKLOAD_CLUSTER_NAME.kubeconfig
+```
