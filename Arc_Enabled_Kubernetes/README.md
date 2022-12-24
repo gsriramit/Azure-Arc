@@ -3,7 +3,6 @@
 ### Introduction to Cluster API and working
 
 #### Cluster API concepts
-**Concepts**
 
 [Introduction to Cluster API](https://cluster-api.sigs.k8s.io/user/concepts.html)  
 
@@ -50,7 +49,7 @@ SUBSCRIPTIONID=""
 az login
 az account set --subscription $SUBSCRIPTIONID
 az ad sp create-for-rbac -n "JumpstartArcK8s" --role "Contributor" --scopes /subscriptions/$SUBSCRIPTIONID
-
+```
 #### Installation of the required tools and dependencies
 
 **Install Azure CLI (az)**
