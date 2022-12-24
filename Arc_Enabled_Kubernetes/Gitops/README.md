@@ -44,3 +44,6 @@ https://learn.microsoft.com/en-us/cli/azure/k8s-configuration/flux?view=azure-cl
 #### Onboarding AKS clusters to the same application update group
 If the same app or microservice runs on the connected cluster and a managed cluster i.e. AKS, then the AKS cluster can also be onboarded to the same group of GitOps update. The --cluster-type parameter should be set to *connectedClusters*. As the path of the application deployment manifests is still going to be the same, the target clusters can be any and anywhere.
 
+### Declarative Method
+When onboarding clusters to GitOps through automation i.e. DevOps pipelines, the process involves deploying Flux agent to the cluster. The agent then communicates with the configured source control and then pulls and deploys the updates  
+Flux manifest - https://raw.githubusercontent.com/gsriramit/Azure-Arc/main/Arc_Enabled_Kubernetes/Gitops/flux.yaml
