@@ -173,10 +173,10 @@ export AZURE_RESOURCE_GROUP="<ResourceGroupName>"
 export WORKLOAD_CLUSTER_NAME=""
 
 #Set the instance counts of the control plane and the user node pools
-export CONTROL_PLANE_INSTANCE_COUNT=2
-export USERNODEPOOL_PLANE_INSTANCE_COUNT=2
+export CONTROL_PLANE_INSTANCE_COUNT=1
+export USERNODEPOOL_PLANE_INSTANCE_COUNT=1
 
-clusterctl generate cluster ${WORKLOAD_CLUSTER_NAME} --kubernetes-version ${KUBERNETES_VERSION} | kubectl apply -f -
+#clusterctl generate cluster ${WORKLOAD_CLUSTER_NAME} --kubernetes-version ${KUBERNETES_VERSION} | kubectl apply -f -
 
 clusterctl generate cluster ${WORKLOAD_CLUSTER_NAME} \
   --kubernetes-version ${KUBERNETES_VERSION} \
